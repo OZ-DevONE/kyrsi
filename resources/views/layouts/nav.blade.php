@@ -46,11 +46,11 @@
                   <a class="nav-link" href="#">Link</a>
                 </li>
               </ul>
-              <form class="d-flex mt-3" action="{{ route('search') }}" method="POST" role="search">
+              {{-- <form class="d-flex mt-3" action="{{ route('search') }}" method="POST" role="search">
                 @csrf
                 <input class="form-control me-2" type="search" name="query" placeholder="Поиск по сайту" aria-label="Search" required>
                 <button class="btn btn-success" type="submit">Поиск</button>
-              </form>            
+              </form>             --}}
             </div>
           </div>
         </div>

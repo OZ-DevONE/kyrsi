@@ -10,11 +10,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SearchController;
 
 // Вывод страницы с курсами в максимальный размер 3 штуки и с использованиемм пагинации
-Route::get('/', function () {
-    $courses = Course::paginate(3);
-    // Вовращаем группу типа массива из которого мы потом будем вытаскивать элементы по их индексу
-    return view('welcome', compact('courses'));
-});
+Route::get('/', [HomeController::class, 'index']);
 
 
 //Группа пользователя
@@ -62,7 +58,7 @@ Route::name('admin.')->group(function(){
         return view('admin.admin', compact('courses'));
     })->name('admin');
 
-    // В группе маршрутов admin
+    // Группа маршрутов admin
     Route::delete('/admin/course/{course}', [AdminCourseController::class, 'destroy'])->name('destroy');
     Route::get('/admin/course/edit/{course}', [AdminCourseController::class, 'edit'])->name('edit');
     Route::post('/admin/course/edit/{course}', [AdminCourseController::class, 'update'])->name('update');

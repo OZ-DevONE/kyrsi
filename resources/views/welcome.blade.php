@@ -2,6 +2,11 @@
 
 
 @section('contanier')
+<div class="categories">
+    @foreach ($categories as $category)
+        <a href="{{ request()->fullUrlWithQuery(['category' => $category]) }}">{{ $category }}</a>
+    @endforeach
+</div>
 {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
     {{-- слайдер --}}
     <div class="container mt-5">
